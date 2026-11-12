@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kleine komponentenbasierte Kursoberfläche als Begleitdemo zur Figma-Präsentation.">
+  <title>CampusKit – Komponenten-Demo</title>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="CampusKit Startseite"><span class="brand-mark">C</span> CampusKit</a>
+    <nav aria-label="Hauptnavigation"><a href="#kurs">Kurse</a><a href="#system">Komponenten</a></nav>
+    <button class="button button--quiet button--small" id="theme-toggle" type="button" aria-pressed="false">☼ Darstellung</button>
+  </header>
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">LIVE-DEMO · KOMPONENTENBASIERTE ENTWICKLUNG</p>
+      <h1>Ein Interface.<br><span>Viele wiederverwendbare Bausteine.</span></h1>
+      <p class="lead">Diese kleine Kursübersicht zeigt, wie ein Designsystem aus konsistenten Komponenten, Varianten und klaren Zuständen entsteht.</p>
+    </section>
+    <section class="demo-grid" id="kurs">
+      <article class="course-card">
+        <div class="course-card__top">
+          <span class="badge badge--green" id="course-status">Anmeldung offen</span>
+          <button class="icon-button" id="favorite" type="button" aria-label="Kurs merken" aria-pressed="false">♡</button>
+        </div>
+        <div class="course-card__icon" aria-hidden="true">⌘</div>
+        <p class="eyebrow">INFORMATIK · SOMMERSEMESTER</p>
+        <h2>Komponentenbasierte Entwicklung</h2>
+        <p class="muted">Baue robuste Oberflächen aus kleinen, verständlichen und wiederverwendbaren Einheiten.</p>
+        <div class="meta"><span>◷ 6 ECTS</span><span>◉ 12 Wochen</span><span>▣ Praxis</span></div>
+        <div class="course-card__bottom">
+          <div><span class="price-label">Freie Plätze</span><strong id="seats">8 von 24</strong></div>
+          <button class="button button--primary" id="enroll" type="button">Jetzt anmelden</button>
+        </div>
+        <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+      </article>
+      <aside class="panel" id="system">
+        <p class="eyebrow">KOMPONENTEN-LABOR</p>
+        <h2>Eine Komponente,<br>mehrere Varianten</h2>
+        <p class="muted">Ändere die Eigenschaften. Die gleiche Button-Komponente wird mit anderen Props dargestellt.</p>
+        <label for="variant">Variante</label>
+        <select id="variant">
+          <option value="primary">Primary</option>
+          <option value="secondary">Secondary</option>
+          <option value="quiet">Quiet</option>
+        </select>
+        <label for="size">Größe</label>
+        <select id="size">
+          <option value="normal">Normal</option>
+          <option value="small">Klein</option>
+        </select>
+        <div class="preview">
+          <button class="button button--primary" id="variant-preview" type="button">Beispiel-Button</button>
+          <code id="variant-code">Button({ variant: "primary", size: "normal" })</code>
+        </div>
+        <div class="component-list">
+          <span><i class="dot dot--green"></i> Button</span>
+          <span><i class="dot dot--blue"></i> Badge</span>
+          <span><i class="dot dot--purple"></i> CourseCard</span>
+        </div>
+      </aside>
+    </section>
+    <section class="explain">
+      <div><span class="step">01</span><h3>Einmal definieren</h3><p>Struktur, Stil und Verhalten liegen zentral in der Komponente.</p></div>
+      <div><span class="step">02</span><h3>Wiederverwenden</h3><p>Instanzen nutzen dieselbe Grundlage statt kopierten Einzelcode.</p></div>
+      <div><span class="step">03</span><h3>Gezielt variieren</h3><p>Props und Zustände verändern Darstellung und Interaktion kontrolliert.</p></div>
+    </section>
+    <footer>CampusKit · Demonstrationsprojekt · HTML, CSS und Vanilla JavaScript</footer>
+  </main>
+  <script src="src/app.js"></script>
+</body>
+</html>
